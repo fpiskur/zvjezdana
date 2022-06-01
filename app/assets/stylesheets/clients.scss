@@ -5,8 +5,6 @@ ul.clients {
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 10px;
-    min-height: 4.5em;
-    display: flex;
     a {
       display: block;
       padding: 10px 20px;
@@ -19,7 +17,10 @@ ul.clients {
     }
     .client_info {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
+      .client_num {
+        margin-right: 10px;
+      }
     }
   }
 }

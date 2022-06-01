@@ -1,15 +1,12 @@
 <li>
   <%= link_to client do %>
     <div class="client_info">
+      <div class="client_num">
+          <%= "#{ client.id }" %>
+      </div>
       <div class="client_name">
         <%= "#{ client.first_name } #{ client.last_name }" %>
       </div>
-      <div class="client_num">
-        <%= "#{ client.id }" %>
-      </div>
-    </div>
-    <div class="client_contact">
-      <%= "#{ client.phone_num }" %>
     </div>
   <% end %>
 </li>
