@@ -15,12 +15,25 @@ ul.clients {
           color: #555;
         }
     }
-    .client_info {
+    .client-list-item {
       display: flex;
       justify-content: flex-start;
-      .client_num {
+      .client-num {
         margin-right: 10px;
       }
     }
+  }
+}
+
+.client {
+  display: flex;
+  flex-direction: column;
+  h3 {
+    font-size: 1em;
+    font-weight: 600;
+    margin: 10px 0px 0px;
+  }
+  p {
+    color: #555;
   }
 }
