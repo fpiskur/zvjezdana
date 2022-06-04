@@ -7,7 +7,24 @@
 <div class="row">
   <aside class="col-md-4">
     <section>
-      <p>Form za unos klijenta</p>
+      <h2>Novi klijent</h2>
+
+      <%= form_with(model: @client, local: true) do |f| %>
+        
+        <%= f.label :first_name, "Ime" %>
+        <%= f.text_field :first_name, class: 'form-control' %>
+
+        <%= f.label :last_name, "Prezime" %>
+        <%= f.text_field :last_name, class: 'form-control' %>
+
+        <%= f.label :phone_num, "Telefon" %>
+        <%= f.text_field :phone_num, class: 'form-control' %>
+
+        <%= f.label :comment, "Komentar" %>
+        <%= f.text_area :comment, rows: 4, placeholder: "Komentar...", class: 'form-control' %>
+
+        <%= f.submit "Dodaj", class: "btn btn-primary" %>
+      <% end %>
     </section>
   </aside>
 
