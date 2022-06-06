@@ -19,6 +19,12 @@ class ClientsController < ApplicationController
     end
   end
 
+  def destroy
+    Client.find(params[:id]).destroy
+    flash[:success] = "Klijent izbrisan!"
+    redirect_to root_url
+  end
+
   private
 
     def client_params

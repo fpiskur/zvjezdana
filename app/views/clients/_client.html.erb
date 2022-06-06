@@ -9,4 +9,9 @@
       </div>
     </div>
   <% end %>
+  <span class="client-controls">
+    <%= link_to "izbriši", client, data: {
+          "turbo-method": :delete,
+          confirm: "Jeste li sigurni da želite izbrisati klijenta?" } %>
+  </span>
 </li>

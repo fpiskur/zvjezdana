@@ -5,6 +5,8 @@ ul.clients {
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
     a {
       display: block;
       padding: 10px 20px;
@@ -14,6 +16,9 @@ ul.clients {
       &:hover {
           color: #555;
         }
+    }
+    a.client-controls {
+      display: inline;
     }
     .client-list-item {
       display: flex;

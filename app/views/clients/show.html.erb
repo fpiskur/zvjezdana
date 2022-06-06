@@ -14,7 +14,7 @@
         <h3>Kontakt</h3>
         <p><%= "#{ @client.phone_num }" %></p>
         <h3>Komentar</h3>
-        <p><%= "#{ @client.comment }" %></p>
+        <p><%= simple_format(@client.comment) %></p>
       </div>
     </section>
     <section>
