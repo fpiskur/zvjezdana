@@ -15,6 +15,7 @@
         <p><%= "#{ @client.phone_num }" %></p>
         <h3>Komentar</h3>
         <p><%= simple_format(@client.comment) %></p>
+        <%= link_to "uredi", edit_client_path(@client) %>
       </div>
     </section>
     <section>

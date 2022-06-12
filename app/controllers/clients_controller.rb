@@ -16,12 +16,28 @@ class ClientsController < ApplicationController
       redirect_to client_path(@client)
     else
       flash[:danger] = "Greška prilikom dodavanja novog klijenta!"
+      render 'index'
+    end
+  end
+
+  def edit
+    @client = Client.find(params[:id])
+  end
+
+  def update
+    @client = Client.find(params[:id])
+
+    if @client.update(client_params)
+      flash[:success] = "Izmjene su spremljene!"
+      redirect_to @client
+    else
+      render 'edit'
     end
   end
 
   def destroy
     Client.find(params[:id]).destroy
-    flash[:success] = "Klijent izbrisan!"
+    flash[:success] = "Klijent je izbrisan!"
     redirect_to root_url
   end
 

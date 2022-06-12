@@ -21,4 +21,4 @@ csv.each do |row|
   puts "#{t.id} - #{t.first_name}, #{t.last_name} saved"
 end
 
-puts "There are now #{Client.count} rows in the transactions table"
+puts "There are now #{Client.count} rows in the clients table"
