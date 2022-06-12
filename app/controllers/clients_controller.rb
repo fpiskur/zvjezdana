@@ -15,7 +15,7 @@ class ClientsController < ApplicationController
       flash[:success] = "Novi korisnik je dodan!"
       redirect_to client_path(@client)
     else
-      puts "Nije se sejvao klijent"
+      flash[:danger] = "Greška prilikom dodavanja novog klijenta!"
     end
   end
 
