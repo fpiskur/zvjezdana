@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_20_110009) do
     t.integer "client_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["client_id", "created_at"], name: "index_treatments_on_client_id_and_created_at"
+    t.index ["client_id", "date"], name: "index_treatments_on_client_id_and_date"
     t.index ["client_id"], name: "index_treatments_on_client_id"
   end
 

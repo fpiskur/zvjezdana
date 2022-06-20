@@ -8,7 +8,7 @@ class CreateTreatments < ActiveRecord::Migration[7.0]
       t.timestamps
     end
     
-    add_index :treatments, [:client_id, :created_at]
+    add_index :treatments, [:client_id, :date]
 
   end
 end
