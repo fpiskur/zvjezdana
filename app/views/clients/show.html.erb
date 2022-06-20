@@ -1,0 +1,29 @@
+<div class="row">
+
+</div>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="client">
+      <div class="client-num">
+          <%= "#{ @client.id }" %>
+      </div>
+      <div class="client-info">
+        <h3>Ime i prezime</h3>
+        <p><%= "#{ @client.first_name } #{ @client.last_name }" %></p>
+        <h3>Kontakt</h3>
+        <p><%= "#{ @client.phone_num }" %></p>
+        <h3>Komentar</h3>
+        <p><%= simple_format(@client.comment) %></p>
+        <%= link_to "uredi", edit_client_path(@client) %>
+      </div>
+    </section>
+    <section>
+      <p>Form za unos tretmana</p>
+    </section>
+  </aside>
+
+  <div class="col-md-8">
+    Lista tretmana
+  </div>
+</div>

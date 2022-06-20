@@ -1,0 +1,44 @@
+ul.clients {
+  list-style: none;
+  padding-left: 0;
+  li {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: black;
+      width: 100%;
+      &:hover {
+          color: #555;
+        }
+    }
+    .client-controls {
+      display: inline;
+    }
+    .client-list-item {
+      display: flex;
+      justify-content: flex-start;
+      .client-num {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.client {
+  display: flex;
+  flex-direction: column;
+  h3 {
+    font-size: 1em;
+    font-weight: 600;
+    margin: 10px 0px 0px;
+  }
+  p {
+    color: #555;
+  }
+}

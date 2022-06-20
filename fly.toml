@@ -14,7 +14,7 @@ processes = []
     RUBY_VERSION = "3.0.2"
 
 [deploy]
-  release_command = "bundle exec rails db:migrate"
+  release_command = "sh ./release.sh"
 
 [env]
   PORT = "8080"

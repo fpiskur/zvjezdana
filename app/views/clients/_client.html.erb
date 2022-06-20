@@ -1,0 +1,17 @@
+<li>
+  <%= link_to client do %>
+    <div class="client-list-item">
+      <div class="client-num">
+          <%= "#{ client.id }" %>
+      </div>
+      <div class="client-name">
+        <%= "#{ client.first_name } #{ client.last_name }" %>
+      </div>
+    </div>
+  <% end %>
+  <span class="client-controls">
+    <%= link_to "izbriši", client, data: {
+          "turbo-method": :delete,
+          "turbo-confirm": "Jeste li sigurni da želite izbrisati klijenta?" } %>
+  </span>
+</li>
