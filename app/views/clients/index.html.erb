@@ -31,7 +31,9 @@
 
   <div class="col-md-8">
     <ul class="clients">
-      <%= render @clients %>
+      <% if @clients.any? %>
+        <%= render @clients %>
+      <% end %>
     </ul>
     <%= will_paginate %>
   </div>

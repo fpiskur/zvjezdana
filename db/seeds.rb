@@ -8,9 +8,10 @@
 
 require 'csv'
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'korisnic.csv'))
-csv = CSV.parse(csv_text, :headers => true, :encoding => 'UTF-8')
-csv.each do |row|
+# Generate clients from seed
+csv_clients_text = File.read(Rails.root.join('lib', 'seeds', 'korisnic.csv'))
+csv_clients = CSV.parse(csv_clients_text, :headers => true, :encoding => 'UTF-8')
+csv_clients.each do |row|
   t = Client.new
   t.id = row['id']
   t.first_name = row['first_name'].nil? ? row['first_name'] : row['first_name'].strip
@@ -22,3 +23,15 @@ csv.each do |row|
 end
 
 puts "There are now #{Client.count} rows in the clients table"
+
+# Generate treatments from seed
+csv_treatments_text = File.read(Rails.root.join('lib', 'seeds', 'rad.csv'))
+csv_treatments = CSV.parse(csv_treatments_text, :headers => true, :encoding => 'UTF-8')
+csv_treatments.each do |row|
+  user = User.find(row['client_id'])
+  date = row['date'].nil? ? row['date'] : row['date'].strip
+  description = row['treatment'].nil? ? row['treatment'] : row['treatment'].strip
+  user.treatments.create!(date: date, description: description)
+end
+
+puts "There are now #{Treatment.count} rows in the treatments table"

@@ -24,6 +24,10 @@
   </aside>
 
   <div class="col-md-8">
-    Lista tretmana
+    <ol class="treatments">
+      <% if @client.treatments.any? %>
+        <%= render @treatments %>
+      <% end %>
+    </ol>
   </div>
 </div>
