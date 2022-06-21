@@ -28,10 +28,10 @@ puts "There are now #{Client.count} rows in the clients table"
 csv_treatments_text = File.read(Rails.root.join('lib', 'seeds', 'rad.csv'))
 csv_treatments = CSV.parse(csv_treatments_text, :headers => true, :encoding => 'UTF-8')
 csv_treatments.each do |row|
-  user = User.find(row['client_id'])
+  client = Client.find(row['client_id'])
   date = row['date'].nil? ? row['date'] : row['date'].strip
   description = row['treatment'].nil? ? row['treatment'] : row['treatment'].strip
-  user.treatments.create!(date: date, description: description)
+  client.treatments.create!(date: date, description: description)
 end
 
 puts "There are now #{Treatment.count} rows in the treatments table"
