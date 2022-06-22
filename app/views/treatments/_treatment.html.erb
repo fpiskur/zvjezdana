@@ -9,7 +9,7 @@
   </section>
   <section class="treatment-controls">
     <%= link_to "uredi", edit_treatment_path(treatment) %>
-    <%= link_to "izbriši", treatment, data: {
+    <%= link_to "izbriši", treatment_path(treatment), data: {
           "turbo-method": :delete,
           "turbo-confirm": "Jeste li sigurni da želite izbrisati tretman?" } %>
   </section>

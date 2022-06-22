@@ -1,0 +1,17 @@
+<div class="row">
+  <section class="col-md-4 col-md-offset-4">
+    <h2>Uredi tretman</h2>
+
+    <%= form_with(model: @treatment, local: true) do |f| %>
+        
+      <%= f.label :date, "Datum" %>
+      <%= f.text_field :date, class: 'form-control' %>
+
+      <%= f.label :description, "Opis" %>
+      <%= f.text_field :description, class: 'form-control' %>
+
+      <%= f.submit "Spremi", class: "btn btn-primary" %>
+      
+    <% end %>
+  <section>
+</div>

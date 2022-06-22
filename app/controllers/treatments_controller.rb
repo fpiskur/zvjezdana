@@ -1,7 +1,6 @@
 class TreatmentsController < ApplicationController
 
   def create
-    puts "###### Paramseters: #{params}"
     client = Client.find(params[:id])
     @treatment = client.treatments.build(treatment_params)
     if @treatment.save
@@ -14,13 +13,24 @@ class TreatmentsController < ApplicationController
   end
 
   def edit
-    # @treatment = Treatment.find(params[:id])
+    @treatment = Treatment.find(params[:id])
   end
 
   def update
+    @treatment = Treatment.find(params[:id])
+
+    if @treatment.update(treatment_params)
+      flash[:success] = "Izmjene su spremljene!"
+      redirect_to client_url(@treatment.client)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    Treatment.find(params[:id]).destroy
+    flash[:success] = "Tretman je izbrisan!"
+    redirect_to request.referrer, status: :see_other
   end
 
   private
