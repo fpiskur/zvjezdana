@@ -7,7 +7,14 @@ ol.treatments {
     border-radius: 5px;
     margin-bottom: 10px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     padding: 10px 20px;
+  }
+  .treatment-controls {
+    display: flex;
+    align-items: center;
+  }
+  a:first-child {
+    margin-right: 10px;
   }
 }

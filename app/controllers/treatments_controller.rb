@@ -20,6 +20,9 @@ class TreatmentsController < ApplicationController
   def update
   end
 
+  def destroy
+  end
+
   private
 
     def treatment_params
