@@ -7,6 +7,7 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
+    @treatment = @client.treatments.build
     @treatments = @client.treatments.all
   end
 

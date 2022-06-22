@@ -19,7 +19,20 @@
       </div>
     </section>
     <section>
-      <p>Form za unos tretmana</p>
+      <h2>Novi tretman</h2>
+      <%= form_with(model: @treatment, local: true) do |f| %>
+
+        <div><%= hidden_field_tag :id, @client.id %></div>
+        
+        <%= f.label :date, "Datum" %>
+        <%= f.date_field :date, class: 'form-control' %>
+
+        <%= f.label :description, "Opis" %>
+        <%= f.text_field :description, class: 'form-control' %>
+
+        <%= f.submit "Dodaj", class: "btn btn-primary" %>
+        
+      <% end %>
     </section>
   </aside>
 

@@ -1,8 +1,16 @@
 <li id="treatment-<%= treatment.id %>">
-  <div class="treatment-date">
-    <%= treatment.date %>
-  </div>
-  <div class="treatment-description">
-    <%= treatment.description %>
-  </div>
+  <section class="treatment-info">
+    <div class="treatment-date">
+      <%= treatment.date %>
+    </div>
+    <div class="treatment-description">
+      <%= treatment.description %>
+    </div>
+  </section>
+  <section class="treatment-controls">
+    <%= link_to "uredi", edit_treatment_path(treatment) %>
+    <%= link_to "izbriši", treatment, data: {
+          "turbo-method": :delete,
+          "turbo-confirm": "Jeste li sigurni da želite izbrisati tretman?" } %>
+  </section>
 </li>
