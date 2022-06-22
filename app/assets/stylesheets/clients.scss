@@ -33,6 +33,9 @@ ul.clients {
 .client {
   display: flex;
   flex-direction: column;
+  background: #ddd;
+  border-radius: 5px;
+  padding: 10px 20px;
   h3 {
     font-size: 1em;
     font-weight: 600;
