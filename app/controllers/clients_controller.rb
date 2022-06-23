@@ -1,7 +1,13 @@
 class ClientsController < ApplicationController
 
   def index
-    @clients = Client.all.paginate(page: params[:page], per_page: 50)
+
+    if params[:query].present?
+      @clients = Client.where("last_name LIKE ?", "%#{params[:query].upcase}%").paginate(page: params[:page], per_page: 50)
+    else
+      @clients = Client.all.paginate(page: params[:page], per_page: 50)
+    end
+
     @client = Client.new
   end
 
