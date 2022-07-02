@@ -5,7 +5,7 @@
     <%= form_with(model: @treatment, local: true) do |f| %>
         
       <%= f.label :date, "Datum" %>
-      <%= f.text_field :date, class: 'form-control' %>
+      <%= f.date_field :date, class: 'form-control' %>
 
       <%= f.label :description, "Opis" %>
       <%= f.text_field :description, class: 'form-control' %>
