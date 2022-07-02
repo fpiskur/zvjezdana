@@ -26,6 +26,7 @@
         
         <%= f.label :date, "Datum" %>
         <%= f.date_field :date, class: 'form-control' %>
+        <%#= f.date_select :date, use_month_numbers: true, order: [:day, :month, :year], class: 'form-control' %>
 
         <%= f.label :description, "Opis" %>
         <%= f.text_field :description, class: 'form-control' %>
