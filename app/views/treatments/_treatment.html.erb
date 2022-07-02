@@ -1,7 +1,7 @@
 <li id="treatment-<%= treatment.id %>">
   <section class="treatment-info">
     <div class="treatment-date">
-      <%= treatment.date %>
+      <%= treatment.date.strftime("%d.%m.%Y.") %>
     </div>
     <div class="treatment-description">
       <%= treatment.description %>
