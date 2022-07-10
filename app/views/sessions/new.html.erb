@@ -1,2 +1,18 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<h1>Prijava</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+    <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+
+      <%= f.label :username, "Korisničko ime" %>
+      <%= f.text_field :usernmae, class: 'form-control' %>
+
+      <%= f.label :password, "Lozinka" %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.submit "Prijavi se", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+<div>
