@@ -6,7 +6,9 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(username: params[:session][:username])
     if user && user.authenticate(params[:session][:password])
-      # Log the user in and redirect to the user's show page.
+      reset_session
+      log_in user
+      redirect_to root_url
     else
       flash.now[:danger] = "Korisničko ime i/ili lozinka nisu ispravni!"
       render 'new', status: :unprocessable_entity
