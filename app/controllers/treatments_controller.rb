@@ -1,5 +1,7 @@
 class TreatmentsController < ApplicationController
 
+  before_action :logged_in_user
+
   def create
     client = Client.find(params[:id])
     @treatment = client.treatments.build(treatment_params)

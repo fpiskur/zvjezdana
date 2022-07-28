@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+  before_action :logged_in_user, only: [:destroy]
+
   def new
   end
 
@@ -20,4 +22,5 @@ class SessionsController < ApplicationController
     log_out
     redirect_to root_url
   end
+
 end
