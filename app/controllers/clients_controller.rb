@@ -5,7 +5,9 @@ class ClientsController < ApplicationController
   def index
 
     if params[:query].present?
-      @clients = Client.where("last_name LIKE ?", "%#{params[:query].upcase}%").paginate(page: params[:page], per_page: 50)
+      # @clients = Client.where("first_name LIKE ? OR last_name LIKE ?", "%#{params[:query].upcase}%", "%#{params[:query].upcase}%").paginate(page: params[:page], per_page: 50)
+      # Search both first and last names or both
+      @clients = Client.where("first_name || ' ' || last_name LIKE ?", "%#{params[:query].upcase}%").paginate(page: params[:page], per_page: 50)
     else
       @clients = Client.all.paginate(page: params[:page], per_page: 50)
     end
