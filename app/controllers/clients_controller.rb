@@ -46,7 +46,12 @@ class ClientsController < ApplicationController
       flash[:success] = "Izmjene su spremljene!"
       redirect_to @client
     else
-      render 'edit'
+      if @client.errors.any?
+        flash.now[:danger] = "Greška prilikom uređivanja klijenta! - #{@client.errors.full_messages.to_sentence}"
+      else
+        flash.now[:danger] = "Greška prilikom uređivanja klijenta!"
+      end
+      render 'edit', status: :unprocessable_entity
     end
   end
 

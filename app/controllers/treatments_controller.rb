@@ -9,7 +9,11 @@ class TreatmentsController < ApplicationController
       flash[:success] = "Novi tretman je dodan!"
       redirect_to client_path(client)
     else
-      flash[:danger] = "Nije moguće dodati novi tretman!"
+      if @treatment.errors.any?
+        flash[:danger] = "Nije moguće dodati novi tretman! - #{@treatment.errors.full_messages.to_sentence}"
+      else
+        flash[:danger] = "Nije moguće dodati novi tretman!"
+      end
       redirect_to client_path(client)
     end
   end
@@ -25,7 +29,12 @@ class TreatmentsController < ApplicationController
       flash[:success] = "Izmjene su spremljene!"
       redirect_to client_url(@treatment.client)
     else
-      render 'edit'
+      if @treatment.errors.any?
+        flash.now[:danger] = "Nije moguće urediti novi tretman! - #{@treatment.errors.full_messages.to_sentence}"
+      else
+        flash.now[:danger] = "Nije moguće urediti novi tretman!"
+      end
+      render 'edit', status: :unprocessable_entity
     end
   end
 
