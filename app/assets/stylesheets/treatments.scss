@@ -19,8 +19,12 @@ ol.treatments {
   .treatment-controls {
     display: flex;
     align-items: center;
-  }
-  a:first-child {
-    margin-right: 10px;
+    font-weight: 600;
+    a:first-child {
+      margin-right: 10px;
+    }
+    a:last-child {
+      color: #b62d0e;
+    }
   }
 }

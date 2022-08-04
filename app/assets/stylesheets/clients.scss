@@ -19,6 +19,10 @@ ul.clients {
     }
     .client-controls {
       display: inline;
+      a:hover {
+        background-color: #7F055F;
+        color: #fff;
+      }
     }
     .client-list-item {
       display: flex;
@@ -53,6 +57,9 @@ ul.clients {
     padding: 3px 6px;
     float: right;
     font-weight: 400;
+  }
+  .client-name {
+    font-size: 1.7em;
   }
 }
 

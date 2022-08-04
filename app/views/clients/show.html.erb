@@ -10,12 +10,16 @@
       </div>
       <div class="client-info">
         <h3>Ime i prezime</h3>
-        <p><%= "#{ @client.first_name } #{ @client.last_name }" %></p>
-        <h3>Kontakt</h3>
-        <p><%= "#{ @client.phone_num }" %></p>
-        <h3>Komentar</h3>
-        <!-- <p><%= simple_format(@client.comment).strip %></p> -->
-        <p class="newline-able"><%= @client.comment %></p>
+        <p class="client-name"><%= "#{ @client.first_name } #{ @client.last_name }" %></p>
+        <% if @client.phone_num.present? %>
+          <h3>Kontakt</h3>
+          <p><%= "#{ @client.phone_num }" %></p>
+        <% end %>
+        <% if @client.comment.present? %>
+          <h3>Komentar</h3>
+          <!-- <p><%= simple_format(@client.comment).strip %></p> -->
+          <p class="newline-able"><%= @client.comment %></p>
+        <% end %>
         <%= link_to "uredi klijenta", edit_client_path(@client), class: "btn btn-primary edit-client-btn" %>
       </div>
     </section>
