@@ -23,7 +23,7 @@
         <%= link_to "uredi klijenta", edit_client_path(@client), class: "btn btn-primary edit-client-btn" %>
       </div>
     </section>
-    <section>
+    <section id="new-treatment">
       <h2>Novi tretman</h2>
       <%= form_with(model: @treatment, local: true, html: { autocomplete: "off" }, id: "add-treatment") do |f| %>
 

@@ -214,3 +214,30 @@ p {
   margin-top: 45px;
   @include box_sizing;
 }
+
+/* mobile / responsive */
+
+@media only screen and (max-device-width: 480px) {
+  .client-list-header {
+    display: flex;
+    flex-flow: column;
+    #paginate-clients {
+      order: 2;
+      .pagination {
+        margin-bottom: 5px;
+      }
+    }
+  
+    #search-clients {
+      order: 1;
+      #query {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  #new-client,
+  #new-treatment {
+    margin-bottom: 30px;
+  }
+}
