@@ -2,20 +2,20 @@ ul.clients {
   list-style: none;
   padding-left: 0;
   li {
-    border: 1px solid #ddd;
+    border: 1px solid #7F055F;
     border-radius: 5px;
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
+    &:hover {
+      background-color: #f5b5da;
+    }
     a {
       display: block;
       padding: 10px 20px;
       text-decoration: none;
       color: black;
       width: 100%;
-      &:hover {
-          color: #555;
-        }
     }
     .client-controls {
       display: inline;
@@ -44,4 +44,10 @@ ul.clients {
   p {
     color: #555;
   }
+}
+
+/* search */
+
+#query {
+  background-color: #FFE8D4;
 }

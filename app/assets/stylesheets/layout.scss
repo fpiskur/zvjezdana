@@ -10,6 +10,7 @@
 
 body {
   padding-top: 60px;
+  background-color: #E5A4CB;
 }
 
 section {
@@ -47,9 +48,9 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.7em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   text-align: center;
   font-weight: normal;
 }
@@ -60,6 +61,10 @@ p {
 }
 
 /* header */
+
+.navbar-inverse {
+  background-color: #7F055F;
+}
 
 #logo {
   float: left;
@@ -84,7 +89,66 @@ p {
   padding-top: 13px;
 }
 
+/* forms */
+
+.form-control {
+  background-color: #FFE8D4;
+}
+
+.form-control:focus {
+  border-color: #7F055F;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08), 0 0 8px rgba(127, 5, 95, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08), 0 0 8px rgba(127, 5, 95, 0.6);
+}
+
+.btn-primary {
+  background-color: #7F055F;
+  border-color: #66064c;
+}
+
+.btn-primary:hover {
+  background-color: #66064c;
+  border-color: #66064c;
+}
+
+/* pagination */
+
+.pagination>.disabled>span,
+.pagination>.disabled>span:hover,
+.pagination>.disabled>span:focus,
+.pagination>.disabled>a,
+.pagination>.disabled>a:hover,
+.pagination>.disabled>a:focus {
+  background-color: #FFE8D4;
+}
+
+.pagination>li>a,
+.pagination>li>span {
+  background-color: #FFE8D4;
+  color: #333;
+}
+
+.pagination>li>a:hover,
+.pagination>li>a:focus,
+.pagination>li>span:hover,
+.pagination>li>span:focus {
+  background-color: #EBD2BE;
+  color: #333;
+}
+
+.pagination>.active>a,
+.pagination>.active>a:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span,
+.pagination>.active>span:hover,
+.pagination>.active>span:focus {
+  background-color: #7F055F;
+  border-color: #66064c;
+}
+
 /* miscellaneous */
+
 .debug_dump {
   clear: both;
   float: left;

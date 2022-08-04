@@ -3,7 +3,7 @@
     <%= will_paginate %>
   </div>
   <div class="col-md-4">
-    <%= form_with(url: clients_path, method: :get, data: {turbo_frame: "clients"}) do |form| %>
+    <%= form_with(url: clients_path, method: :get, data: {turbo_frame: "clients"}, html: { autocomplete: "off" }) do |form| %>
 
       <%= form.label :query, "Pretraži:" %>
       <div>
@@ -20,7 +20,7 @@
     <section>
       <h2>Novi klijent</h2>
 
-      <%= form_with(model: @client, local: true) do |f| %>
+      <%= form_with(model: @client, local: true, html: { autocomplete: "off" }) do |f| %>
         
         <%= f.label :first_name, "Ime" %>
         <%= f.text_field :first_name, class: 'form-control' %>
