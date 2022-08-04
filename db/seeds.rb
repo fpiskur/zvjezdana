@@ -14,10 +14,10 @@ csv_clients = CSV.parse(csv_clients_text, :headers => true, :encoding => 'UTF-8'
 csv_clients.each do |row|
   t = Client.new
   t.id = row['id']
-  t.first_name = row['first_name'].nil? ? row['first_name'] : row['first_name'].strip
-  t.last_name = row['last_name'].nil? ? row['last_name'] : row['last_name'].strip
-  t.phone_num = row['phone_num'].nil? ? row['phone_num'] : row['phone_num'].strip
-  t.comment = row['comment'].nil? ? row['comment'] : row['comment'].strip
+  t.first_name = row['first_name'].nil? ? '' : row['first_name'].strip
+  t.last_name = row['last_name'].nil? ? '' : row['last_name'].strip
+  t.phone_num = row['phone_num'].nil? ? '' : row['phone_num'].strip
+  t.comment = row['comment'].nil? ? '' : row['comment'].strip
   t.save
   puts "#{t.id} - #{t.first_name}, #{t.last_name} saved"
 end
