@@ -221,6 +221,7 @@ p {
   .client-list-header {
     display: flex;
     flex-flow: column;
+    margin-bottom: 20px;
     #paginate-clients {
       order: 2;
       .pagination {
