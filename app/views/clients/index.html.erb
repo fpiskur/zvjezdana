@@ -5,9 +5,9 @@
   <div class="col-md-4">
     <%= form_with(url: clients_path, method: :get, data: {turbo_frame: "clients"}, html: { autocomplete: "off" }) do |form| %>
 
-      <%= form.label :query, "Pretraži:" %>
+      <%#= form.label :query, "Pretraži:" %>
       <div>
-        <%= form.text_field :query %>
+        <%= form.text_field :query, placeholder: "Traži" %>
 
         <%#= form.submit 'Traži' %>
       </div>
@@ -20,7 +20,7 @@
     <section>
       <h2>Novi klijent</h2>
 
-      <%= form_with(model: @client, local: true, html: { autocomplete: "off" }) do |f| %>
+      <%= form_with(model: @client, local: true, html: { autocomplete: "off" }, id: "add-client") do |f| %>
         
         <%= f.label :first_name, "Ime" %>
         <%= f.text_field :first_name, class: 'form-control' %>
@@ -34,7 +34,7 @@
         <%= f.label :comment, "Komentar" %>
         <%= f.text_area :comment, rows: 4, placeholder: "Komentar...", class: 'form-control' %>
 
-        <%= f.submit "Dodaj", class: "btn btn-primary" %>
+        <%= f.submit "Dodaj klijenta", class: "btn btn-primary" %>
         
       <% end %>
     </section>

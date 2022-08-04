@@ -6,7 +6,7 @@
   <aside class="col-md-4">
     <section class="client">
       <div class="client-num">
-          <%= "#{ @client.id }" %>
+          <%= "Rb: #{ @client.id }" %>
       </div>
       <div class="client-info">
         <h3>Ime i prezime</h3>
@@ -14,13 +14,14 @@
         <h3>Kontakt</h3>
         <p><%= "#{ @client.phone_num }" %></p>
         <h3>Komentar</h3>
-        <p><%= simple_format(@client.comment) %></p>
+        <!-- <p><%= simple_format(@client.comment).strip %></p> -->
+        <p class="newline-able"><%= @client.comment %></p>
         <%= link_to "uredi", edit_client_path(@client) %>
       </div>
     </section>
     <section>
       <h2>Novi tretman</h2>
-      <%= form_with(model: @treatment, local: true) do |f| %>
+      <%= form_with(model: @treatment, local: true, html: { autocomplete: "off" }, id: "add-treatment") do |f| %>
 
         <div><%= hidden_field_tag :id, @client.id %></div>
         

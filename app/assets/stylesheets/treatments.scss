@@ -3,12 +3,18 @@ ol.treatments {
   padding-left: 0;
 
   li {
-    border: 1px solid #ddd;
+    border: 1px solid #7F055F;
     border-radius: 5px;
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
+    a {
+      color: black;
+    }
+    .treatment-date {
+      font-weight: 600;
+    }
   }
   .treatment-controls {
     display: flex;

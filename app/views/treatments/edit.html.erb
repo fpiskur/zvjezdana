@@ -2,7 +2,7 @@
   <section class="col-md-4 col-md-offset-4">
     <h2>Uredi tretman</h2>
 
-    <%= form_with(model: @treatment, local: true) do |f| %>
+    <%= form_with(model: @treatment, local: true, html: { autocomplete: "off" }, id: "edit-treatment") do |f| %>
         
       <%= f.label :date, "Datum" %>
       <%= f.date_field :date, class: 'form-control' %>

@@ -33,16 +33,19 @@ ul.clients {
 .client {
   display: flex;
   flex-direction: column;
-  background: #ddd;
+  background: #FFE8D4;
   border-radius: 5px;
   padding: 10px 20px;
   h3 {
     font-size: 1em;
     font-weight: 600;
-    margin: 10px 0px 0px;
+    margin: 10px 0px 3px;
   }
   p {
     color: #555;
+  }
+  .client-num {
+    font-weight: 600;
   }
 }
 
@@ -50,4 +53,15 @@ ul.clients {
 
 #query {
   background-color: #FFE8D4;
+  border: 1px solid #7F055F;
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 6px 12px;
+  float: right;
+  width: 100%;
+  &:focus {
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08), 0 0 8px rgba(127, 5, 95, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08), 0 0 8px rgba(127, 5, 95, 0.6);
+  }
 }

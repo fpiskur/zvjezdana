@@ -57,7 +57,11 @@ h2 {
 
 p {
   font-size: 1.1em;
-  line-height: 1.7em;
+  line-height: 1.2em;
+}
+
+.newline-able {
+  white-space: pre-wrap;
 }
 
 /* header */
@@ -93,6 +97,7 @@ p {
 
 .form-control {
   background-color: #FFE8D4;
+  border: 1px solid #7F055F;
 }
 
 .form-control:focus {
@@ -112,7 +117,37 @@ p {
   border-color: #66064c;
 }
 
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active:hover,
+.btn-primary:active:focus {
+  background-color: #66064c;
+}
+
+.btn {
+  width: 100%;
+}
+
+#add-client,
+#edit-client,
+#add-treatment,
+#edit-treatment {
+  .form-control {
+    margin-bottom: 5px;
+  }
+  label {
+    margin-bottom: 0;
+  }
+  .btn {
+    margin-top: 5px;
+  }
+}
+
 /* pagination */
+
+.pagination {
+  margin-top: 5px;
+}
 
 .pagination>.disabled>span,
 .pagination>.disabled>span:hover,
@@ -121,12 +156,14 @@ p {
 .pagination>.disabled>a:hover,
 .pagination>.disabled>a:focus {
   background-color: #FFE8D4;
+  border-color: #7F055F;
 }
 
 .pagination>li>a,
 .pagination>li>span {
   background-color: #FFE8D4;
   color: #333;
+  border: 1px solid #7F055F;
 }
 
 .pagination>li>a:hover,
@@ -135,6 +172,7 @@ p {
 .pagination>li>span:focus {
   background-color: #EBD2BE;
   color: #333;
+  border-color: #66064c;
 }
 
 .pagination>.active>a,
@@ -146,6 +184,20 @@ p {
   background-color: #7F055F;
   border-color: #66064c;
 }
+
+/* alerts */
+
+// .alert-success {
+//   color: #3c763d;
+//   background-color: #dff0d8;
+//   border-color: #d6e9c6;
+// }
+
+// .alert-danger {
+//   color: #a94442;
+//   background-color: #f2dede;
+//   border-color: #ebccd1;
+// }
 
 /* miscellaneous */
 
