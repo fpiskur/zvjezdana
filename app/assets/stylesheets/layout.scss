@@ -126,12 +126,14 @@ p {
 
 .btn {
   width: 100%;
+  font-weight: 600;
 }
 
 #add-client,
 #edit-client,
 #add-treatment,
-#edit-treatment {
+#edit-treatment,
+#login-form {
   .form-control {
     margin-bottom: 5px;
   }
@@ -187,17 +189,21 @@ p {
 
 /* alerts */
 
-// .alert-success {
-//   color: #3c763d;
-//   background-color: #dff0d8;
-//   border-color: #d6e9c6;
-// }
+.alert-success {
+  color: #fff;
+  background-color: #57A773;
+  font-weight: 600;
+  border-color: #368050;
+  // border: none;
+}
 
-// .alert-danger {
-//   color: #a94442;
-//   background-color: #f2dede;
-//   border-color: #ebccd1;
-// }
+.alert-danger {
+  color: #fff;
+  background-color: #FF2E00;
+  font-weight: 600;
+  border-color: #b62d0e;
+  // border: none;
+}
 
 /* miscellaneous */
 

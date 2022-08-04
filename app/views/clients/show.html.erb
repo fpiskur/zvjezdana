@@ -16,7 +16,7 @@
         <h3>Komentar</h3>
         <!-- <p><%= simple_format(@client.comment).strip %></p> -->
         <p class="newline-able"><%= @client.comment %></p>
-        <%= link_to "uredi", edit_client_path(@client) %>
+        <%= link_to "uredi klijenta", edit_client_path(@client), class: "btn btn-primary edit-client-btn" %>
       </div>
     </section>
     <section>

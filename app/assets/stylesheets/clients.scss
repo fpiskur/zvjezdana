@@ -34,6 +34,7 @@ ul.clients {
   display: flex;
   flex-direction: column;
   background: #FFE8D4;
+  border: 1px solid #ce9567;
   border-radius: 5px;
   padding: 10px 20px;
   h3 {
@@ -47,6 +48,12 @@ ul.clients {
   .client-num {
     font-weight: 600;
   }
+  .edit-client-btn {
+    width: auto;
+    padding: 3px 6px;
+    float: right;
+    font-weight: 400;
+  }
 }
 
 /* search */
@@ -56,6 +63,7 @@ ul.clients {
   border: 1px solid #7F055F;
   border-radius: 4px;
   margin-top: 10px;
+  margin-bottom: 40px;
   padding: 6px 12px;
   float: right;
   width: 100%;
