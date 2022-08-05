@@ -19,8 +19,17 @@ class User < ApplicationRecord
 
   # Remembers a user in the database for use in persistent sessions
   def remember
-    self.remember_token = User.new_token
-    update_attribute(:remember_digest, User.digest(remember_token))
+    # user can log in only from single browser, subsequent logins will log user
+    # out from previously logged in browser
+    # self.remember_token = User.new_token
+    # update_attribute(:remember_digest, User.digest(remember_token))
+
+    # allow user to log in from multiple browsers
+    if !remember_digest
+      self.remember_token = User.new_token
+      update_attribute(:remember_digest, User.digest(remember_token))
+    end
+
     remember_digest
   end
 
