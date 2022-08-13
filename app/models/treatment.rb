@@ -2,8 +2,6 @@ class Treatment < ApplicationRecord
   belongs_to :client
   default_scope -> { order(date: :desc) }
   validates :client_id, presence: true
-  # validates :description, presence: { message: 'Tretman mora sadržavati opis' }
-  # validates :date, presence: { message: 'Tretman mora sadržavati datum' }
   validate :description_and_date
 
   private

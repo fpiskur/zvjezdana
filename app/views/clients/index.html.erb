@@ -8,12 +8,8 @@
   </div>
   <div id="search-clients" class="col-md-4">
     <%= form_with(url: clients_path, method: :get, data: {turbo_frame: "clients"}, html: { autocomplete: "off" }) do |form| %>
-
-      <%#= form.label :query, "Pretraži:" %>
       <div>
         <%= form.text_field :query, placeholder: "Traži" %>
-
-        <%#= form.submit 'Traži' %>
       </div>
     <% end %>
   </div>

@@ -1,10 +1,6 @@
 class Client < ApplicationRecord
 
   has_many :treatments, dependent: :destroy
-
-  # validates :first_name, presence: true, unless: ->(client) { client.last_name.present? }
-  # validates :last_name, presence: true, unless: ->(client) { client.first_name.present? }
-
   validate :first_name_or_last_name
 
   private

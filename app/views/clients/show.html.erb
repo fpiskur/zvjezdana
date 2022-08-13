@@ -17,7 +17,6 @@
         <% end %>
         <% if @client.comment.present? %>
           <h3>Komentar</h3>
-          <!-- <p><%= simple_format(@client.comment).strip %></p> -->
           <p class="newline-able"><%= @client.comment %></p>
         <% end %>
         <%= link_to "uredi klijenta", edit_client_path(@client), class: "btn btn-primary edit-client-btn" %>
@@ -31,7 +30,6 @@
         
         <%= f.label :date, "Datum" %>
         <%= f.date_field :date, class: 'form-control' %>
-        <%#= f.date_select :date, use_month_numbers: true, order: [:day, :month, :year], class: 'form-control' %>
 
         <%= f.label :description, "Opis" %>
         <%= f.text_field :description, class: 'form-control' %>

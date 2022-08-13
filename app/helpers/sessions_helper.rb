@@ -17,8 +17,6 @@ module SessionsHelper
       user = User.find_by(id: user_id)
       if user && session[:session_token] == user.session_token
         user == User.find_by(username: "zvjezdana")
-      # else
-      #   return false
       end
     elsif (user_id = cookies.encrypted[:user_id])
       user = User.find_by(id: user_id)
