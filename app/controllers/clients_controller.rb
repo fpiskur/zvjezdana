@@ -17,7 +17,7 @@ class ClientsController < ApplicationController
   end
 
   def show
-    @client = Client.find(params[:id])
+    @client = get_client
     @treatment = @client.treatments.build
     @treatments = @client.treatments.all
   end
@@ -38,11 +38,11 @@ class ClientsController < ApplicationController
   end
 
   def edit
-    @client = Client.find(params[:id])
+    @client = get_client
   end
 
   def update
-    @client = Client.find(params[:id])
+    @client = get_client
 
     if @client.update(client_params)
       flash[:success] = "Izmjene su spremljene!"
@@ -58,12 +58,16 @@ class ClientsController < ApplicationController
   end
 
   def destroy
-    Client.find(params[:id]).destroy
+    get_client.destroy
     flash[:success] = "Klijent je izbrisan!"
     redirect_to root_url
   end
 
   private
+
+    def get_client
+      Client.find(params[:id])
+    end
 
     def client_params
       params.require(:client).permit(:first_name, :last_name, :phone_num,
