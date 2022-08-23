@@ -18,8 +18,6 @@ class ClientsController < ApplicationController
 
   def show
     @client = get_client
-    @treatment = @client.treatments.build
-    @treatments = @client.treatments.all
   end
 
   def create
