@@ -16,13 +16,13 @@ module SessionsHelper
     if (user_id = session[:user_id])
       user = User.find_by(id: user_id)
       if user && session[:session_token] == user.session_token
-        user == User.find_by(username: "zvjezdana")
+        user == User.find_by(username: admin_username)
       end
     elsif (user_id = cookies.encrypted[:user_id])
       user = User.find_by(id: user_id)
       if user && user.authenticated?(cookies[:remember_token])
         log_in user
-        user == User.find_by(username: "zvjezdana")
+        user == User.find_by(username: admin_username)
       end
     end
   end
@@ -35,8 +35,12 @@ module SessionsHelper
   end
 
   def log_out
-    user = User.find_by(username: "zvjezdana")
+    user = User.find_by(username: admin_username)
     forget(user)
     reset_session
+  end
+
+  def admin_username
+    Rails.application.credentials.username
   end
 end
