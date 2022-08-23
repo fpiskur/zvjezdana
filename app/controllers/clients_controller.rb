@@ -26,11 +26,7 @@ class ClientsController < ApplicationController
       flash[:success] = "Novi korisnik je dodan!"
       redirect_to client_path(@client)
     else
-      if @client.errors.any?
-        flash[:danger] = "Greška prilikom dodavanja novog klijenta! - #{@client.errors.full_messages.to_sentence}"
-      else
-        flash[:danger] = "Greška prilikom dodavanja novog klijenta!"
-      end
+      flash[:danger] = "Greška prilikom dodavanja novog klijenta! - #{@client.errors.full_messages.to_sentence}"
       redirect_to root_url, status: :unprocessable_entity
     end
   end
