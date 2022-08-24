@@ -43,7 +43,7 @@
   <div class="col-md-8">
     <ol class="treatments">
       <% if @client.treatments.any? %>
-        <% @client.treatments.each do |treatment| %>
+        <% @client.treatments.order(date: :desc).each do |treatment| %>
           <%= render partial: 'treatments/treatment',
                      locals: { treatment: treatment } unless treatment.id.blank? %>
         <% end %>
