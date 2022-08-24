@@ -7,9 +7,7 @@ class Client < ApplicationRecord
 
     # Validate presence of first_name OR last_name
     def first_name_or_last_name
-      if first_name.present? || last_name.present?
-        return
-      end
+      return if first_name.present? || last_name.present?
       errors.add(:base, "Ispunite barem jedno od polja - Ime ili Prezime.")
     end
 end
