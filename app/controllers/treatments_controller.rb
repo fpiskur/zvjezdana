@@ -9,11 +9,7 @@ class TreatmentsController < ApplicationController
       flash[:success] = "Novi tretman je dodan!"
       redirect_to client_path(client)
     else
-      if @treatment.errors.any?
-        flash[:danger] = "Nije moguće dodati novi tretman! - #{@treatment.errors.full_messages.to_sentence}"
-      else
-        flash[:danger] = "Nije moguće dodati novi tretman!"
-      end
+      flash[:danger] = "Nije moguće dodati novi tretman! - #{@treatment.errors.full_messages.to_sentence}"
       redirect_to client_path(client)
     end
   end

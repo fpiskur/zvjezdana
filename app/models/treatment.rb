@@ -7,8 +7,8 @@ class Treatment < ApplicationRecord
 
     # Validate presence of description AND date
     def description_and_date
-      errors.add(:base, "Oba polja (Datum i Opis) moraju biti ispunjena!") unless
-      description.present? && date.present?
+      return if description.present? && date.present?
+      errors.add(:base, "Oba polja (Datum i Opis) moraju biti ispunjena!")
     end
 
 end
