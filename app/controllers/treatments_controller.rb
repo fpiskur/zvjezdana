@@ -15,11 +15,11 @@ class TreatmentsController < ApplicationController
   end
 
   def edit
-    @treatment = Treatment.find(params[:id])
+    @treatment = get_treatment
   end
 
   def update
-    @treatment = Treatment.find(params[:id])
+    @treatment = get_treatment
 
     if @treatment.update(treatment_params)
       flash[:success] = "Izmjene su spremljene!"
@@ -35,12 +35,16 @@ class TreatmentsController < ApplicationController
   end
 
   def destroy
-    Treatment.find(params[:id]).destroy
+    get_treatment.destroy
     flash[:success] = "Tretman je izbrisan!"
     redirect_to request.referrer, status: :see_other
   end
 
   private
+
+    def get_treatment
+      Treatment.find(params[:id])
+    end
 
     def treatment_params
       params.require(:treatment).permit(:date, :description)
