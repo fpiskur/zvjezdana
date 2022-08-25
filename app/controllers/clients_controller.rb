@@ -3,7 +3,6 @@ class ClientsController < ApplicationController
   before_action :logged_in_user
 
   def index
-
     if params[:query].present?
       # Search first and last names or both
       @clients = Client.where("first_name || ' ' || last_name LIKE ?",

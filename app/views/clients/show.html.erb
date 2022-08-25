@@ -24,9 +24,11 @@
     </section>
     <section id="new-treatment">
       <h2>Novi tretman</h2>
-      <%= form_with(model: @client.treatments.build, local: true, html: { autocomplete: "off" }, id: "add-treatment") do |f| %>
-
-        <div><%= hidden_field_tag :id, @client.id %></div>
+      <%= form_with(model: @client.treatments.build,
+                    url: [@client, @client.treatments.build],
+                    local: true,
+                    html: { autocomplete: "off" },
+                    id: "add-treatment") do |f| %>
         
         <%= f.label :date, "Datum" %>
         <%= f.date_field :date, class: 'form-control' %>
