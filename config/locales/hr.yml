@@ -1,0 +1,19 @@
+hr:
+  activerecord:
+    models:
+      client: 'klijent'
+      treatment: 'tretman'
+    attributes:
+      client:
+        first_name: 'ime'
+        last_name: 'prezime'
+        phone_num: 'kontakt'
+        comment: 'komentar'
+      treatment:
+        date: 'Datum'
+        description: 'Opis'
+  errors:
+    format: "polje %{attribute} %{message}"
+    messages:
+      blank: "ne može biti prazno"
+      empty: "ne može biti prazno"
