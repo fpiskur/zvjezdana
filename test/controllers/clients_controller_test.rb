@@ -6,8 +6,14 @@ class ClientsControllerTest < ActionDispatch::IntegrationTest
     @client = clients(:one)
   end
 
-  test "should redirect index when not logged in" do
+  test "should redirect root when not logged in" do
     get root_path
+    refute flash.empty?
+    assert_redirected_to login_url
+  end
+
+  test "should redirect index when not logged in" do
+    get clients_path
     refute flash.empty?
     assert_redirected_to login_url
   end
