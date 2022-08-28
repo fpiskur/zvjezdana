@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(username: params[:session][:username])
-    if user && user.authenticate(params[:session][:password])
+    if user && user.username == admin_username && user.authenticate(params[:session][:password])
       reset_session
       remember user
       log_in user
