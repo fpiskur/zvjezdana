@@ -50,4 +50,21 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     refute flash.empty?
     assert_template 'sessions/new'
   end
+
+  test "logging out after logging in" do
+    log_in_as(@admin_user)
+    assert is_logged_in?
+    assert_redirected_to root_url
+    follow_redirect!
+    assert_select "a[href=?]", logout_path
+    delete logout_path
+    refute is_logged_in?
+    assert_empty cookies[:remember_token]
+    assert_redirected_to root_url
+    delete logout_path  # Simulate a user clicking logout in a second window
+    refute flash.empty?
+    assert_redirected_to login_url
+    follow_redirect!
+    assert_select 'form#login-form'
+  end
 end
