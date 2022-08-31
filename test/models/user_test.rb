@@ -28,4 +28,8 @@ class UserTest < ActiveSupport::TestCase
     refute duplicate_user.valid?
   end
 
+  test "authenticated? should return false for a user with nil digest" do
+    refute @user.authenticated?('')
+  end
+
 end
