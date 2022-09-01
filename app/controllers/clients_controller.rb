@@ -26,7 +26,7 @@ class ClientsController < ApplicationController
       redirect_to client_path(@client)
     else
       flash[:danger] = "Greška prilikom dodavanja novog klijenta! - #{@client.errors.full_messages.to_sentence}"
-      redirect_to root_url, status: :unprocessable_entity
+      redirect_to root_url, status: :see_other
     end
   end
 
