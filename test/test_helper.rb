@@ -27,7 +27,6 @@ end
 # Since session can't be manipulated inside integration test, this is an
 # alternative to log_in_as
 class ActionDispatch::IntegrationTest
-
   # Log in as a particular user.
   def log_in_as(user, password: 'zvjezdana')
     post login_path, params: { session: { username: user.username,
