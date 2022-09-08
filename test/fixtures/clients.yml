@@ -11,3 +11,11 @@ two:
   last_name: Ivić
   phone_num: 987-654-321
   comment: Other comment goes here
+
+<% 150.times do |n| %>
+client_<%= n %>:
+  first_name: <%= "Client #{n}" %>
+  last_name: <%= "ClientLast #{n}" %>
+  phone_num: <%= "123456-#{n}" %>
+  comment: <%= "This is client #{n}" %>
+<% end %>
