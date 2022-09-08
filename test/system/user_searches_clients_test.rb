@@ -5,9 +5,9 @@ class UserSearchesClientsTest < ApplicationSystemTestCase
   def setup
     # Log in user
     visit root_url
-    fill_in('Korisničko ime', with: 'zvjezdana')
-    fill_in('Lozinka', with: 'zvjezdana')
-    click_button('Prijavi se')
+    fill_in("Korisničko ime", with: "zvjezdana")
+    fill_in("Lozinka", with: "zvjezdana")
+    click_button("Prijavi se")
   end
 
   test "empty search query" do
@@ -28,7 +28,14 @@ class UserSearchesClientsTest < ApplicationSystemTestCase
   end
 
   test "search client with many results" do
-    
+    find("input#query").fill_in with: "client"
+    page.execute_script("document.querySelector('div#search-clients form').submit()")
+    assert_selector "ul.clients li", count: 50
+    assert_selector "div.pagination", count: 2
+    first("a", text: "2").click
+    assert_selector "ul.clients li", count: 50
+    page.save_screenshot('screenshot.png')
+    assert_selector "div.pagination", count: 2
   end
 
 end
