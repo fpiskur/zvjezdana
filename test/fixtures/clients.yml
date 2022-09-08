@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  first_name: MyString
-  last_name: MyString
-  phone_num: MyString
-  comment: MyString
+  first_name: Pero
+  last_name: Perić
+  phone_num: 123-456-789
+  comment: Test comment goes here
 
 two:
-  first_name: MyString
-  last_name: MyString
-  phone_num: MyString
-  comment: MyString
+  first_name: Ivo
+  last_name: Ivić
+  phone_num: 987-654-321
+  comment: Other comment goes here
