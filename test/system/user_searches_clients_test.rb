@@ -34,8 +34,28 @@ class UserSearchesClientsTest < ApplicationSystemTestCase
     assert_selector "div.pagination", count: 2
     first("a", text: "2").click
     assert_selector "ul.clients li", count: 50
-    page.save_screenshot('screenshot.png')
     assert_selector "div.pagination", count: 2
+  end
+
+  test "search client by first name" do
+    find("input#query").fill_in with: "ivo"
+    page.execute_script("document.querySelector('div#search-clients form').submit()")
+    assert_selector "ul.clients li", count: 3
+    assert_no_selector "div.pagination"
+  end
+
+  test "search client by last name" do
+    find("input#query").fill_in with: "ivi"
+    page.execute_script("document.querySelector('div#search-clients form').submit()")
+    assert_selector "ul.clients li", count: 3
+    assert_no_selector "div.pagination"
+  end
+
+  test "search for non-existent client" do
+    find("input#query").fill_in with: "qwertz"
+    page.execute_script("document.querySelector('div#search-clients form').submit()")
+    assert_no_selector "ul.clients li"
+    assert_no_selector "div.pagination"
   end
 
 end

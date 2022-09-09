@@ -12,6 +12,18 @@ two:
   phone_num: 987-654-321
   comment: Other comment goes here
 
+three:
+  first_name: Ivoslav
+  last_name: Ivićević
+  phone_num: 987-654-321
+  comment: Other comment goes here
+
+four:
+  first_name: Ivo Janko
+  last_name: Ivićevski
+  phone_num: 987-654-321
+  comment: Other comment goes here
+
 <% 150.times do |n| %>
 client_<%= n %>:
   first_name: <%= "Client #{n}" %>
