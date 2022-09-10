@@ -49,7 +49,7 @@ class ClientsController < ApplicationController
   def destroy
     get_client.destroy
     flash[:success] = "Klijent je izbrisan!"
-    redirect_to root_url
+    redirect_to root_url, status: :see_other
   end
 
   private

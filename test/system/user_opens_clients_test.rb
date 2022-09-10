@@ -28,7 +28,7 @@ class UserOpensClientsTest < ApplicationSystemTestCase
   test "edit client" do
     first("a[href='#{client_path(@client.id)}']").click
     assert_selector "a.edit-client-btn"
-    click_link('uredi klijenta')
+    click_link("uredi klijenta")
     assert_selector "form#edit-client"
     assert_equal @client.first_name,
                  find("input[name='client[first_name]']").value
@@ -42,4 +42,5 @@ class UserOpensClientsTest < ApplicationSystemTestCase
     click_button('NATRAG')
     assert_current_path(client_path(@client))
   end
+
 end
