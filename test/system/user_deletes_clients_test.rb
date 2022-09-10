@@ -22,4 +22,13 @@ class UserDeletesClientsTest < ApplicationSystemTestCase
     assert_no_selector "li#client-#{@client.id}"
   end
 
+  test "abort deleting client" do
+    assert_selector "li#client-#{@client.id}"
+    dismiss_confirm do
+      first("li#client-#{@client.id} span.client-controls a").click
+    end
+    assert_selector "ul.clients"
+    assert_selector "li#client-#{@client.id}"
+  end
+
 end
