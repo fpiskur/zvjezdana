@@ -3,11 +3,7 @@ require "application_system_test_case"
 class UserSearchesClientsTest < ApplicationSystemTestCase
 
   def setup
-    # Log in user
-    visit root_url
-    fill_in("Korisničko ime", with: "zvjezdana")
-    fill_in("Lozinka", with: "zvjezdana")
-    click_button("Prijavi se")
+    log_in_admin
   end
 
   test "empty search query" do
