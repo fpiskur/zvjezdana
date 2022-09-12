@@ -31,10 +31,10 @@
                     id: "add-treatment") do |f| %>
         
         <%= f.label :date, "Datum" %>
-        <%= f.date_field :date, class: 'form-control' %>
+        <%= f.date_field :date, class: "form-control" %>
 
         <%= f.label :description, "Opis" %>
-        <%= f.text_field :description, class: 'form-control' %>
+        <%= f.text_field :description, class: "form-control" %>
 
         <%= f.submit "Dodaj", class: "btn btn-primary" %>
         
@@ -46,7 +46,7 @@
     <ol class="treatments">
       <% if @client.treatments.any? %>
         <% @client.treatments.order(date: :desc).each do |treatment| %>
-          <%= render partial: 'treatments/treatment',
+          <%= render partial: "treatments/treatment",
                      locals: { treatment: treatment } unless treatment.id.blank? %>
         <% end %>
       <% end %>

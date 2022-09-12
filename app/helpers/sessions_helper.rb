@@ -43,4 +43,5 @@ module SessionsHelper
   def admin_username
     Rails.application.credentials.username
   end
+  
 end

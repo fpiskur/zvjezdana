@@ -11,10 +11,10 @@
     <%= form_with(model: @treatment, url: [@client, @treatment], local: true, html: { autocomplete: "off" }, id: "edit-treatment") do |f| %>
         
       <%= f.label :date, "Datum" %>
-      <%= f.date_field :date, class: 'form-control' %>
+      <%= f.date_field :date, class: "form-control" %>
 
       <%= f.label :description, "Opis" %>
-      <%= f.text_field :description, class: 'form-control' %>
+      <%= f.text_field :description, class: "form-control" %>
 
       <%= f.submit "Spremi", class: "btn btn-primary" %>
       

@@ -25,7 +25,7 @@ class TreatmentsController < ApplicationController
       redirect_to client_url(@client)
     else
       flash.now[:danger] = "Nije moguće urediti novi tretman! - #{@treatment.errors.full_messages.to_sentence}"
-      render 'edit', status: :unprocessable_entity
+      render "edit", status: :unprocessable_entity
     end
   end
 
@@ -48,4 +48,5 @@ class TreatmentsController < ApplicationController
     def treatment_params
       params.require(:treatment).permit(:date, :description)
     end
+    
 end

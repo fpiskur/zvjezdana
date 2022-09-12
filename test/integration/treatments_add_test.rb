@@ -20,7 +20,7 @@ class TreatmentsAddTest < ActionDispatch::IntegrationTest
     assert_redirected_to client_url(@client)
     follow_redirect!
     refute flash.empty?
-    assert_select 'div.alert-danger', text: "#{flash_msg_default} - "\
+    assert_select "div.alert-danger", text: "#{flash_msg_default} - "\
             "polje Opis ne može biti prazno i polje Datum ne može biti prazno"
 
     # invalid date / valid description
@@ -32,7 +32,7 @@ class TreatmentsAddTest < ActionDispatch::IntegrationTest
     assert_redirected_to client_url(@client)
     follow_redirect!
     refute flash.empty?
-    assert_select 'div.alert-danger', text: "#{flash_msg_default} - "\
+    assert_select "div.alert-danger", text: "#{flash_msg_default} - "\
             "polje Datum ne može biti prazno"
 
     # valid date / invalid description
@@ -44,7 +44,7 @@ class TreatmentsAddTest < ActionDispatch::IntegrationTest
     assert_redirected_to client_url(@client)
     follow_redirect!
     refute flash.empty?
-    assert_select 'div.alert-danger', text: "#{flash_msg_default} - "\
+    assert_select "div.alert-danger", text: "#{flash_msg_default} - "\
             "polje Opis ne može biti prazno"
   end
 
@@ -60,7 +60,7 @@ class TreatmentsAddTest < ActionDispatch::IntegrationTest
     assert_redirected_to client_url(@client)
     follow_redirect!
     refute flash.empty?
-    assert_select 'div.alert-success', text: "Novi tretman je dodan!"
+    assert_select "div.alert-success", text: "Novi tretman je dodan!"
     assert_select "li#treatment-#{treatment.id}"
   end
 

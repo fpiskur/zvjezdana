@@ -42,7 +42,7 @@ class ClientsController < ApplicationController
       redirect_to @client
     else
       flash.now[:danger] = "Greška prilikom uređivanja klijenta! - #{@client.errors.full_messages.to_sentence}"
-      render 'edit', status: :unprocessable_entity
+      render "edit", status: :unprocessable_entity
     end
   end
 
@@ -62,4 +62,5 @@ class ClientsController < ApplicationController
       params.require(:client).permit(:first_name, :last_name, :phone_num,
                                   :comment)
     end
+
 end

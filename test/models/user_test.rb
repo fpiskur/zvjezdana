@@ -29,7 +29,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "authenticated? should return false for a user with nil digest" do
-    refute @user.authenticated?('')
+    refute @user.authenticated?("")
   end
 
 end

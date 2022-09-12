@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       redirect_to root_url
     else
       flash.now[:danger] = "Korisničko ime i/ili lozinka nisu ispravni!"
-      render 'new', status: :unprocessable_entity
+      render "new", status: :unprocessable_entity
     end
   end
 

@@ -18,7 +18,7 @@ class UserEditsTreatmentsTest < ApplicationSystemTestCase
     assert_equal @treatment.description,
                  find("input[name='treatment[description]']").value
     assert_selector "button.back-btn"
-    click_button('NATRAG')
+    click_button("NATRAG")
     assert_current_path(client_path(@client))
   end
 

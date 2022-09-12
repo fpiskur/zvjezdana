@@ -11,16 +11,16 @@
     <%= form_with(model: @client, local: true, html: { autocomplete: "off" }, id: "edit-client") do |f| %>
         
       <%= f.label :first_name, "Ime" %>
-      <%= f.text_field :first_name, class: 'form-control' %>
+      <%= f.text_field :first_name, class: "form-control" %>
 
       <%= f.label :last_name, "Prezime" %>
-      <%= f.text_field :last_name, class: 'form-control' %>
+      <%= f.text_field :last_name, class: "form-control" %>
 
       <%= f.label :phone_num, "Telefon" %>
-      <%= f.text_field :phone_num, class: 'form-control' %>
+      <%= f.text_field :phone_num, class: "form-control" %>
 
       <%= f.label :comment, "Komentar" %>
-      <%= f.text_area :comment, rows: 4, placeholder: "Komentar...", class: 'form-control' %>
+      <%= f.text_area :comment, rows: 4, placeholder: "Komentar...", class: "form-control" %>
 
       <%= f.submit "Spremi", class: "btn btn-primary" %>
       

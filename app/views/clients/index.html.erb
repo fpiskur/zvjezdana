@@ -1,6 +1,6 @@
 <div class="row client-list-header">
   <% if agent_mobile? %>
-    <%= render 'new_client' %>
+    <%= render "new_client" %>
   <% end %>
 
   <div id="paginate-clients" class="col-md-4 col-md-offset-4">
@@ -17,7 +17,7 @@
 
 <div class="row">
   <% if !agent_mobile? %>
-    <%= render 'new_client' %>
+    <%= render "new_client" %>
   <% end %>
 
   <div class="col-md-8">

@@ -18,7 +18,7 @@ class ClientsAddTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
     follow_redirect!
     refute flash.empty?
-    assert_select 'div.alert-danger', text: "Greška prilikom dodavanja novog "\
+    assert_select "div.alert-danger", text: "Greška prilikom dodavanja novog "\
                   "klijenta! - Ispunite barem jedno od polja - Ime ili Prezime."
   end
 
@@ -36,9 +36,9 @@ class ClientsAddTest < ActionDispatch::IntegrationTest
     assert_redirected_to client_path(client)
     follow_redirect!
     refute flash.empty?
-    assert_select 'div.alert-success', text: "Novi korisnik je dodan!"
-    assert_select 'p.client-name', text: "#{client.first_name}"
-    assert_select 'form#add-treatment'
+    assert_select "div.alert-success", text: "Novi korisnik je dodan!"
+    assert_select "p.client-name", text: "#{client.first_name}"
+    assert_select "form#add-treatment"
   end
 
 end

@@ -10,4 +10,5 @@ class Client < ApplicationRecord
       return if first_name.present? || last_name.present?
       errors.add(:base, "Ispunite barem jedno od polja - Ime ili Prezime.")
     end
+    
 end

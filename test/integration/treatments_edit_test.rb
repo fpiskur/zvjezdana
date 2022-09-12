@@ -16,9 +16,9 @@ class TreatmentsEditTest < ActionDispatch::IntegrationTest
     patch client_treatment_path(@client, @treatment), params: { treatment: {
                                                         date: "  ",
                                                         description: "  " } }
-    assert_template 'edit'
+    assert_template "edit"
     refute flash.empty?
-    assert_select 'div.alert-danger', text: "#{flash_msg_default} - "\
+    assert_select "div.alert-danger", text: "#{flash_msg_default} - "\
               "polje Opis ne može biti prazno i polje Datum ne može biti prazno"
     refute @treatment.reload.date.blank? || @treatment.reload.description.blank?
   end
@@ -31,7 +31,7 @@ class TreatmentsEditTest < ActionDispatch::IntegrationTest
     assert_redirected_to client_path(@client)
     follow_redirect!
     refute flash.empty?
-    assert_select 'div.alert-success', text: "Izmjene su spremljene!"
+    assert_select "div.alert-success", text: "Izmjene su spremljene!"
     assert_equal "foo", @treatment.reload.description
   end
 
